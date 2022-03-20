@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Plus d'informations</title>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js" integrity="sha512-A2+khatRDWHUE2VUtN4xUTkr1nc4YfDBw9Sg3ea6x0aRPfpcYieDZji4D2edDHy/yF5NsYzP7kL8sSM8s5EqCw==" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/ico" href="img/icon.ico" />
+</head>
+<body>
+        
+
+        <section id="slide-1" class="homeSlide">
+            <div class="bcg"
+                 data-start="background-position: 50% 0px;"
+                 data-100p-start="background-position: 50% -200px;"
+                 data-anchor-target="#slide-1"
+                 >
+              <div class="l-top hasAnim"
+                   data-start="top: 0px; opacity: .5;"
+                   data-100p-start="top: -200px; opacity:0;"
+                   data-anchor-target="#slide-1"
+                   >
+              </div>
+              <div class="hsContainer">
+                <div class="hsContent"
+                     data-center="opacity: 1"
+                     data-100-start="opacity: 0"
+                     data-anchor-target="#slide-1">
+                     <h2><a href="index.html" style="text-decoration: none;"><img src="img/logo.png" alt="bell_tree_logo" width="15%" height="15%"></a> Notre extension</h2>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <section class="center" id="slide-2">
+            <div class="content"
+                 data-start="top: 100px; transform: rotate(0deg); marigin-left: 50px;"
+                 data-150p-start="top: 300px; transform: rotate(-45deg);"
+                 data-anchor-target="#slide-2"
+                 >
+                 <a href="download.html" style="text-decoration: none;"><div class="circle">
+                <div>Télécharger</div>
+              </div>
+            </div></a>
+            <div class="content"
+                 data-start="top: 800px;"
+                 data-150p-start="top: 300px;"
+                 data-anchor-target="#slide-2"
+                 style="margin-left: 50%; padding-right: 50px;">
+              <p>
+                Notre extension fonctionne via un système de cashback, lorsque vous réalisez un achat à travers Bell Tree, 
+                nous récupérons une commission, cette commission est ensuite reversée à des associations oeuvrant pour le bien de notre planète ! <br><br>
+                De plus, Bell Tree est simple à télécharger et il n'y aucune manipulation suplémentaire à faire, hormis réaliser des achats sur internet.
+                Alors n'hésitez plus, installez Bell Tree et aidez notre planète et les associations qui la soutiennent !
+                </p>
+            </div>
+          </section>
+          
+          <section id="slide-3-more" class="homeSlide">
+            <div class="bcg"
+                 data-bottom="background-position: 50% 0px;"
+                 data-100p-bottom="background-position: 50% -200px;"
+                 data-anchor-target="#slide-3-more"
+                 >
+              <div class="hsContainer">
+                <div class="hsContent"
+                     data-center="opacity: 1"
+                     data-100-bottom="opacity: 0"
+                     data-anchor-target="#slide-3-more">
+                  <h2>ECOLO FRIENDLY</h2>
+                  <p> Notre extension oeuvre uniquement pour le bien de notre planète ! 
+                    <br>
+                    <img src="img/friendly.png" alt="bell_tree_logo" width="15%" height="15%">
+                  </p>
+
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <script>
+              ( function( $ ) {
+                // Init Skrollr
+                var s = skrollr.init({
+                    render: function(data) {
+                        //Debugging - Log the current scroll position.
+                        //console.log(data.curTop);
+                    }
+                });
+            } )( jQuery );
+          </script>
+          
+
+
+
+
+
+</body>
+</html>

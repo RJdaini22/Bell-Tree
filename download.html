@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Téléchargement</title>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js" integrity="sha512-A2+khatRDWHUE2VUtN4xUTkr1nc4YfDBw9Sg3ea6x0aRPfpcYieDZji4D2edDHy/yF5NsYzP7kL8sSM8s5EqCw==" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<link rel="icon" type="image/ico" href="img/icon.ico" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+        
+        <section id="slide-1" class="homeSlide">
+            <div class="bcg"
+                 data-start="background-position: 50% 0px;"
+                 data-100p-start="background-position: 50% -200px;"
+                 data-anchor-target="#slide-1"
+                 >
+              <div class="l-top hasAnim"
+                   data-start="top: 0px; opacity: .5;"
+                   data-100p-start="top: -200px; opacity:0;"
+                   data-anchor-target="#slide-1"
+                   >
+              </div>
+              <div class="hsContainer">
+                <div class="hsContent"
+                     data-center="opacity: 1"
+                     data-100-start="opacity: 0"
+                     data-anchor-target="#slide-1">
+                     <h2><a href="index.php" style="text-decoration: none;"><img src="img/logo.png" alt="bell_tree_logo" width="15%" height="15%"></a> Télécharger l'extension</h2>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <section class="center" id="slide-2">
+            <div class="content"
+                 data-start="top: 100px; transform: rotate(0deg); marigin-left: 50px;"
+                 data-150p-start="top: 300px; transform: rotate(-45deg);"
+                 data-anchor-target="#slide-2"
+                 >
+                 <div class="circle">
+                <div>FORMULAIRE</div>
+              </div>
+            </div></a>
+            <div class="content"
+                 data-start="top: 800px;"
+                 data-150p-start="top: 150px;"
+                 data-anchor-target="#slide-2"
+                 style="margin-left: 60%; padding-right: 50px;">
+              <p>
+                <form method="post" action="" id="forminscription" name="forminscription">
+              
+                  <div class="form-group">
+                      <label for="message-text" class="col-form-label"><i class="fa fa-commenting-o" aria-hidden="true"></i> Prénom :</label>
+                      <input class="w3-input w3-border" type="text" placeholder="Votre Prénom" id="surname" name="surname">
+                  </div>
+                  <div class="form-group">
+                    <label for="message-text" class="col-form-label"><i class="fa fa-user" aria-hidden="true"></i> Nom :</label>
+                    <input class="w3-input w3-border" type="text" placeholder="Votre Nom" id="name" name="name">
+                  </div>
+                  <div class="form-group">
+                    <label for="message-text" class="col-form-label"><i class="fa fa-envelope-o" aria-hidden="true"></i> Mail :</label>
+                    <input class="w3-input w3-border" type="text" placeholder="Votre Mail" id="email" name="email">
+                  </div>
+        
+                  <p>
+              <div id="register_output"></div>
+              </p>
+              <button class="download_button" name="submitbtn" id="submitbtn">Télécharger<i class="fa fa-check"></i></button>
+              <p class="cgutext">En appuyant sur ce bouton j'accepte les <a href="#">condition générales d'utilisation</a> de l'extension</p>
+                
+              </div>
+              
+            </form></p>
+            </div>
+          </section>
+          
+          <section id="slide-3" class="homeSlide">
+            <div class="bcg"
+                 data-bottom="background-position: 50% 0px;"
+                 data-100p-bottom="background-position: 50% -200px;"
+                 data-anchor-target="#slide-3"
+                 >
+              <div class="hsContainer">
+                <div class="hsContent"
+                     data-center="opacity: 1"
+                     data-100-bottom="opacity: 0"
+                     data-anchor-target="#slide-3">
+                  <h2>WORKSHOP 3ème année</h2>
+                  <p> Equipe : Ryan Le Hô, Enzo Comperat, Mike Williams </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <script>
+              ( function( $ ) {
+                // Init Skrollr
+                var s = skrollr.init({
+                    render: function(data) {
+                        //Debugging - Log the current scroll position.
+                        //console.log(data.curTop);
+                    }
+                });
+            } )( jQuery );
+          </script>
+          
+
+
+          <script>
+            document.querySelector("#submitbtn").addEventListener("click", function(event) {
+                     document.getElementById("register_output").innerHTML += "";
+                     event.preventDefault();
+            }, false);
+            
+            $(document).ready(function(){
+                $("#submitbtn").click(function(){
+                    
+                  var surname = $("#surname").val();
+                  var name = $("#name").val();
+                  var email = $("#email").val();
+            
+                    var data ="&surname=" + surname + "&name=" + name + "&email=" + email;
+            
+                    $.ajax({
+                      method: "post",
+                      url: "http://localhost/BellTree/Site/phpregister/register.php?",
+                      data: data,
+                      success: function(data){
+            
+                        $("#register_output").html(data);
+            
+                        
+            
+                      }
+            
+                    });
+            
+                });
+            
+            });
+            </script>
+
+
+
+</body>
+</html>
